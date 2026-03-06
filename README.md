@@ -209,6 +209,81 @@ jarvis-obsidian-claude/
 
 所有技能均通过 Claude Code 直接调用：`/技能名称`，支持参数化使用。
 
+## 🔌 插件集成
+
+### **Obsidian Web Clipper × clipboard-organize 智能联动**
+
+Jarvis 系统深度集成 **Obsidian Web Clipper** 浏览器插件，构建完整的网页内容捕获→智能分类→知识整合工作流。
+
+![](99_系统/附件/Pasted%20image%2020260306155739.png)
+
+![](99_系统/附件/Pasted%20image%2020260306155757.png)
+![](99_系统/附件/Pasted%20image%2020260306155850.png)
+
+#### **🔗 插件安装**
+- **Chrome 商店**: [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf?utm_source=ext_sidebar)
+- **Firefox 插件**: 通过 Obsidian 官方渠道获取
+- **配置路径**: 设置为保存到 `00_收件箱/网络剪藏/` 目录
+
+#### **🔄 联动工作流**
+```
+浏览器浏览 → Web Clipper 捕获 → 自动保存 → clipboard-organize 智能分类 → 知识库整合
+```
+
+1. **捕获阶段** (Web Clipper):
+   - 一键保存网页内容为 Markdown
+   - 自动提取标题、正文、元数据
+   - 保存到 `00_收件箱/网络剪藏/[文章标题].md`
+
+2. **整理阶段** (clipboard-organize):
+   ```bash
+   # 智能分类单篇文章
+   /clipboard-organize 00_收件箱/网络剪藏/MyArticle.md
+
+   # 批量整理所有剪藏
+   /clipboard-organize
+   ```
+
+3. **分类规则**:
+   - **深度研究** → `30_研究/[主题]/`
+   - **教程指南** → `30_研究/教程/`
+   - **概念知识** → `40_知识库/[分类]/`
+   - **参考文章** → `50_资源/文章/[主题]/`
+   - **新闻动态** → `50_资源/新闻/[领域]/`
+   - **工具资源** → `50_资源/工具/[类型]/`
+
+#### **🎯 智能特性**
+- **自动主题识别**: 基于内容分析匹配最相关领域
+- **结构化元数据**: 自动生成 frontmatter 包含来源、日期、标签
+- **知识图谱连接**: 自动创建 wikilinks 连接到相关项目和领域
+- **重复检测**: 识别相似内容，避免信息冗余
+
+#### **📊 使用示例**
+```bash
+# 1. 使用 Web Clipper 保存技术文章到收件箱
+# 2. 执行智能分类
+/clipboard-organize 00_收件箱/网络剪藏/AI-Transformer架构详解.md
+
+# 输出示例:
+**标题**: AI Transformer架构详解
+**归类**: 30_研究/ai/transformer/
+**类型**: 网络剪藏
+**标签**: #transformer #ai #深度学习 #注意力机制
+**一句话总结**: 深入解析Transformer架构的核心原理和应用场景
+**核心观点**:
+1. 注意力机制是Transformer的核心创新
+2. 多头注意力提升模型表达能力
+3. 位置编码解决序列顺序问题
+```
+
+#### **⚡ 最佳实践**
+- **每日整理**: 将 `/clipboard-organize` 加入晨间工作流
+- **批量处理**: 定期清理 `00_收件箱/网络剪藏/` 目录
+- **质量过滤**: 在分类时标记低质量内容，保持知识库纯净
+- **反向链接**: 分类后自动在相关领域笔记中添加引用
+
+> **提示**: Web Clipper 保存的原始内容在 `00_收件箱/网络剪藏/` 中，经过 `/clipboard-organize` 处理后移动到对应分类目录，保持收件箱整洁。
+
 ## 📄 开源许可
 
 本项目采用 **MIT 许可证** - 详见 [LICENSE](LICENSE) 文件。
