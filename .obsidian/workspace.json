@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dc977780a8fe7d29",
+        "id": "3a3d1530996b04d4",
         "type": "tabs",
         "children": [
           {
-            "id": "5fba018326b84065",
+            "id": "378f48ad40d99220",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -294,9 +294,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5fba018326b84065",
+  "active": "edeff5c96e987db1",
   "lastOpenFiles": [
     "README.md",
+    "CONTRIBUTING.md",
+    "00_收件箱/LICENSE.md",
+    "CODE_OF_CONDUCT.md",
     "99_系统/附件/Pasted image 20260306155850.png",
     "99_系统/附件/Pasted image 20260306155757.png",
     "99_系统/附件/Pasted image 20260306155739.png",
@@ -337,7 +340,6 @@
     "99_系统/用户画像与上下文.md",
     "90_计划/!MOC-计划.md",
     "50_资源/!MOC-资源管理.md",
-    "40_知识库/!MOC-知识库管理.md",
     "50_资源/Screenshot.png",
     "15_领域/家庭生活/设备说明书/软件/sunshine串流/附件/Pasted image 20241203194907.png",
     "未命名.canvas",
