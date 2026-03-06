@@ -1,0 +1,10 @@
+{
+  "shouldConfirmBeforeCreate": true,
+  "weekStart": "locale",
+  "wordsPerDot": 250,
+  "showWeeklyNote": true,
+  "weeklyNoteFormat": "gggg-[W]ww",
+  "weeklyNoteTemplate": "90-System/.templates/Weekly-模板.md",
+  "weeklyNoteFolder": "20-Areas/工作职业",
+  "localeOverride": "system-default"
+}

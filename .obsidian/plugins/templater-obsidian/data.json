@@ -1,0 +1,42 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "90-System/.templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": true,
+  "shell_path": "/bin/bash",
+  "user_scripts_folder": "90-System/.scripts",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "00-Inbox/临时笔记",
+      "template": ""
+    },
+    {
+      "folder": "10-Projects",
+      "template": "Project-模板.md"
+    },
+    {
+      "folder": "20-Areas/个人成长",
+      "template": ""
+    }
+  ],
+  "enable_ribbon_icon": true,
+  "enable_editor_menu": true,
+  "startup_templates": [
+    ""
+  ],
+  "enable_quick_switcher": true,
+  "syntax_highlighting": true,
+  "enabled_templates_hotkeys": [],
+  "formatter_version": "1.0.0",
+  "date_format": "YYYY-MM-DD",
+  "time_format": "HH:mm",
+  "prompt_on_template_creation": true
+}

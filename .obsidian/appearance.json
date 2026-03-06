@@ -1,1 +1,9 @@
-{}
+{
+  "cssTheme": "Blue Topaz",
+  "nativeMenus": false,
+  "theme": "system",
+  "accentColor": "#43b9f9",
+  "enabledCssSnippets": [
+    "nav-folder-title-icon"
+  ]
+}

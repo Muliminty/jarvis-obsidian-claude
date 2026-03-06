@@ -1,0 +1,5 @@
+{
+  "template": "90-System/.templates/Simple-Daily-日记模板.md",
+  "folder": "20-Areas/个人成长/daily",
+  "format": "YYYY/MM/YYYY-MM-DD"
+}
