@@ -248,3 +248,16 @@ git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
 <p align="center">
   由 <a href="https://github.com/Muliminty">Muliminty</a> 基于 <a href="https://github.com/MarsWang42/OrbitOS">OrbitOS</a> 开发
 </p>
+
+
+---
+
+1. 怎么使用
+安装 obsidian
+会用 claude
+
+拉项目, .执行第一个指令 /help
+
+这个指令还没实现
+
+执行之后你要教用户怎么使用,

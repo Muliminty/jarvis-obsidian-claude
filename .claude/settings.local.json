@@ -12,7 +12,8 @@
       "mcp__exa__web_search_advanced_exa",
       "Bash(source .env.exa)",
       "Bash(echo $EXA_API_KEY)",
-      "Bash(bash scripts/verify-exa-setup.sh)"
+      "Bash(bash scripts/verify-exa-setup.sh)",
+      "Bash(git commit:*)"
     ]
   }
 }
