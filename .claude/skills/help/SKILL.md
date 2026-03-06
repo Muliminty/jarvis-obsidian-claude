@@ -21,7 +21,6 @@ description: 显示贾维斯系统使用说明与技能大全
 ## 🚀 快速启用
 ```bash
 # 在Claude Code中打开本项目目录
-cd /Users/muliminty/project/jarvis-obsidian-claude
 
 # 执行第一个指令
 /start-my-day
