@@ -9,6 +9,7 @@
   <a href="#-快速开始">快速开始</a> •
   <a href="#-基于-orbitos">基于 OrbitOS</a> •
   <a href="#-系统架构">系统架构</a> •
+  <a href="#-技能大全">技能大全</a> •
   <a href="#-开源许可">开源许可</a> •
   <a href="#-示例数据">示例数据</a> •
 </p>
@@ -27,7 +28,7 @@
 
 ### 🧠 **智能代理引擎**
 
-- **15+ 专用技能**: 内容策展、工作流自动化、深度研究、知识解析
+- **15+ 专用技能**: 内容策展、工作流自动化、深度研究、知识解析 (详见 [🎮 技能大全](#-技能大全))
 - **Claude Code 深度集成**: 原生支持 Claude 智能代理，实时响应指令
 - **多模态技能管道**: AI 资讯、产品发布、GitHub 热点自动抓取与分析
 
@@ -99,6 +100,8 @@ cp .env.exa.example .env.exa
 /kickoff
 ```
 
+> 💡 **完整技能列表**: 系统共 15 个技能，涵盖内容策展、工作流自动化、技术操作等场景。详见下方 [🎮 技能大全](#-技能大全) 部分。
+
 ## 🌐 基于 OrbitOS
 
 本项目基于 [MarsWang42/OrbitOS](https://github.com/MarsWang42/OrbitOS) 开发，在以下方面进行了深度增强：
@@ -157,6 +160,51 @@ jarvis-obsidian-claude/
 - **智能层**: Claude Code Agents + 技能管道系统
 - **数据层**: 本地文件系统 + Git 版本控制
 - **集成层**: Exa API + MCP 服务器 + Web 搜索能力
+
+## 🎮 技能大全
+
+系统集成 **15 个智能技能**，分为 **4 个核心类别**：
+
+### 🎯 内容策展技能
+- **`/ai-newsletters`**: 每日 AI 热点新闻摘要 (TLDR AI, The Rundown AI)
+- **`/ai-products`**: AI 产品发布跟踪 (Product Hunt, HN, GitHub, Reddit)
+- **`/github-trending`**: GitHub 趋势项目发现，特别关注 AI 开源仓库
+
+### 🔄 工作流技能
+- **`/start-my-day`**: 晨间规划核心 - 生成当日日记，连接活跃项目
+- **`/kickoff`**: 想法 → 项目孵化管道 - 处理收件箱，创建结构化项目
+- **`/research`**: 深度研究工作流 - 双代理协同，生成领域知识库
+- **`/ask`**: 快速问答 - 即时响应，无需繁琐笔记记录
+- **`/parse-knowledge`**: 非结构化文本 → 知识库结构化整合
+- **`/archive`**: 项目归档 - 清理已完成项目，保持系统整洁
+- **`/brainstorm`**: 交互式头脑风暴 - 创意发散与收敛，可导出项目
+- **`/clipboard-organize`**: 网络剪藏整理 - 自动归类文章到规范结构
+
+### 🛠️ 技术功能技能
+- **`/simplify`**: 代码审查与优化 - 检查可复用性、质量、效率
+- **`/obsidian-markdown`**: Obsidian Markdown 编辑 - 支持 wikilinks、嵌入、标注
+- **`/obsidian-bases`**: Obsidian Bases 创建 - 数据库视图、过滤器、公式
+- **`/json-canvas`**: JSON Canvas 编辑 - 思维导图、流程图、系统架构图
+
+### 🎪 核心组合示例
+```bash
+# 晨间工作流
+/start-my-day          # 生成当日规划
+/ai-newsletters       # 获取 AI 资讯
+/github-trending      # 查看技术趋势
+
+# 内容处理管道
+/kickoff              # 想法转项目
+/research             # 深度研究
+/parse-knowledge      # 知识库整合
+
+# 技术创作
+/obsidian-markdown    # 笔记编写
+/obsidian-bases       # 数据视图
+/json-canvas          # 视觉化思考
+```
+
+所有技能均通过 Claude Code 直接调用：`/技能名称`，支持参数化使用。
 
 ## 📄 开源许可
 
