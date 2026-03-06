@@ -52,29 +52,38 @@
 
 ## 🚀 快速开始
 
-### 1. 环境准备
+### 🎯 开箱即用，傻瓜操作
+
+**只需三步，立即体验 AI 管家：**
+
+1. **安装软件**：
+   - [Obsidian](https://obsidian.md/) - 知识管理工具
+   - [Claude Code](https://claude.ai/code) - AI 智能代理
+
+2. **获取项目**：
+   ```bash
+   git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
+   cd jarvis-obsidian-claude
+   ```
+
+3. **开始使用**：
+   - 用 Obsidian 打开项目文件夹
+   - 在 Claude Code 中打开项目目录
+   - 执行第一个指令：`/start-my-day`
+
+**💡 新手提示**：如果不知道如何使用，可以随时在 Claude Code 中输入 `/help`，系统会引导你完成后续操作。
+
+### 🛠️ 可选：高级配置
+
+如果你需要更强大的搜索功能，可以配置 Exa API：
 
 ```bash
-# 克隆仓库
-git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
-cd jarvis-obsidian-claude
-
-# 配置 Exa API (可选，用于高级搜索功能)
+# 在项目目录中执行：
 cp .env.exa.example .env.exa
-# 编辑 .env.exa 填入你的 Exa API 密钥
+# 编辑 .env.exa 文件，填入你的 Exa API 密钥
 ```
 
-### 2. 导入 Obsidian
-
-直接用 Obsidian 打开项目
-
-### 3. 启动 Claude Code
-
-1. 在 Claude Code 中打开本项目目录
-2. 系统会自动识别技能配置
-3. 尝试第一个指令：`/start-my-day`
-
-### 4. 核心技能体验
+### 🎮 核心技能体验
 
 ```bash
 # 晨间规划 - 生成当日日记和任务清单
@@ -248,16 +257,3 @@ git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
 <p align="center">
   由 <a href="https://github.com/Muliminty">Muliminty</a> 基于 <a href="https://github.com/MarsWang42/OrbitOS">OrbitOS</a> 开发
 </p>
-
-
----
-
-1. 怎么使用
-安装 obsidian
-会用 claude
-
-拉项目, .执行第一个指令 /help
-
-这个指令还没实现
-
-执行之后你要教用户怎么使用,
