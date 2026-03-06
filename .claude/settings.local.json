@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(date:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:bullrich.dev)",
+      "WebFetch(domain:rss.beehiiv.com)",
+      "Bash(tree:*)",
+      "mcp__exa__get_code_context_exa",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__exa__web_search_exa",
+      "mcp__exa__web_search_advanced_exa",
+      "Bash(source .env.exa)",
+      "Bash(echo $EXA_API_KEY)",
+      "Bash(bash verify-exa-setup.sh)"
+    ]
+  }
+}
