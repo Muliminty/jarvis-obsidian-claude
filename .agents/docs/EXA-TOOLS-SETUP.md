@@ -6,8 +6,8 @@
 
 1. **`.env.exa.example`** - 环境变量模板文件
 2. **`.env.exa`** - 包含你的 Exa API 密钥（需从 `.env.exa.example` 复制并填写）
-3. **`setup-exa-tools.sh`** - 安装和配置脚本
-4. **`verify-exa-setup.sh`** - 验证脚本
+3. **`scripts/setup-exa-tools.sh`** - 安装和配置脚本
+4. **`scripts/verify-exa-setup.sh`** - 验证脚本
 5. **`EXA-TOOLS-SETUP.md`** - 本指南
 
 ## 🔧 配置状态
@@ -106,7 +106,7 @@ export EXA_API_KEY=your_exa_api_key_here
 ## 🛠️ 故障排除
 
 ### 如果工具未启用
-1. **检查环境变量**：运行 `./verify-exa-setup.sh`
+1. **检查环境变量**：运行 `./scripts/verify-exa-setup.sh`
 2. **重启 Claude Code**：确保新环境变量被加载
 3. **检查 API 密钥权限**：确认密钥支持高级功能
 4. **查看日志**：检查 Claude Code 控制台输出

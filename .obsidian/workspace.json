@@ -155,7 +155,7 @@
               },
               "pinned": true,
               "icon": "terminal",
-              "title": "终端：✳ Identity Introduction"
+              "title": "终端：⠐ Claude Code"
             }
           },
           {
@@ -243,7 +243,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5
+    "width": 521.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,8 +264,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c27908a621d41a0d",
+  "active": "afc03c38e8410084",
   "lastOpenFiles": [
+    "scripts/verify-exa-setup.sh",
+    "scripts/setup-exa-tools.sh",
+    "scripts",
+    "10_日记/2026-03-06.md",
     "README.md",
     "99_系统/附件/Pasted image 20260306144135.png",
     "99_系统/附件/Pasted image 20260306144159.png",
@@ -278,7 +282,6 @@
     "99_系统/附件/Pasted image 20260306144553.png",
     "1.md",
     "99_系统/附件/Pasted image 20260306144255.png",
-    "10_日记/2026-03-06.md",
     "99_系统/附件",
     "00_收件箱/看板.md",
     "00_收件箱/看板.md",
@@ -304,8 +307,6 @@
     "50_资源/!MOC-资源管理.md",
     "40_知识库/!MOC-知识库管理.md",
     "99_系统/数据库/知识库.base",
-    "99_系统/数据库/项目归档.base",
-    "99_系统/数据库/项目.base",
     "50_资源/Screenshot.png",
     "15_领域/家庭生活/设备说明书/软件/sunshine串流/附件/Pasted image 20241203194907.png",
     "归档/20-Areas/兴趣爱好/img/Pasted image 20251223165538.png",

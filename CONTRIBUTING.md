@@ -65,8 +65,10 @@ git checkout -b feature/your-feature-name
 
 配置文件/
   ├── CLAUDE.md          # 贾维斯行为规范
-  ├── AGENTS.md          # 代理系统文档
-  └── .env.exa.example   # 环境变量模板
+  ├── CODE_OF_CONDUCT.md # 行为准则
+  ├── CONTRIBUTING.md    # 贡献指南
+  ├── .env.exa.example   # 环境变量模板
+  └── scripts/           # 工具脚本
 ```
 
 ## 🔧 技能开发指南

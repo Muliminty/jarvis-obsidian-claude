@@ -26,22 +26,26 @@
 ## ✨ 特性
 
 ### 🧠 **智能代理引擎**
+
 - **15+ 专用技能**: 内容策展、工作流自动化、深度研究、知识解析
 - **Claude Code 深度集成**: 原生支持 Claude 智能代理，实时响应指令
 - **多模态技能管道**: AI 资讯、产品发布、GitHub 热点自动抓取与分析
 
 ### 📚 **Obsidian 原生支持**
+
 - **全格式支持**: Markdown、Bases (.base)、Canvas (.canvas)、Wikilinks
 - **PARA 方法论**: 基于 OrbitOS 的领域-项目-资源-归档结构
 - **本地优先**: 所有数据存储在本地，隐私安全有保障
 
 ### ⚡ **自动化工作流**
+
 - **每日晨间规划** (`/start-my-day`): 自动生成当日日记，连接活跃项目
 - **智能收件箱** (`/kickoff`): 想法快速捕获 → 项目孵化管道
 - **深度研究** (`/research`): 双代理工作流，生成领域知识库
 - **内容策展** (`/ai-newsletters`, `/ai-products`, `/github-trending`): 每日 AI 趋势自动摘要
 
 ### 🔧 **开发者友好**
+
 - **模块化设计**: 技能可独立使用或组合扩展
 - **TypeScript 技能系统**: 易于二次开发和自定义扩展
 - **完整文档**: 包含配置指南、技能开发文档、最佳实践
@@ -49,6 +53,7 @@
 ## 🚀 快速开始
 
 ### 1. 环境准备
+
 ```bash
 # 克隆仓库
 git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
@@ -60,16 +65,17 @@ cp .env.exa.example .env.exa
 ```
 
 ### 2. 导入 Obsidian
-1. 打开 Obsidian，创建新仓库或打开现有仓库
-2. 将本项目所有文件复制到 Obsidian 仓库根目录
-3. 重启 Obsidian，系统会自动加载配置
+
+直接用 Obsidian 打开项目
 
 ### 3. 启动 Claude Code
+
 1. 在 Claude Code 中打开本项目目录
 2. 系统会自动识别技能配置
 3. 尝试第一个指令：`/start-my-day`
 
 ### 4. 核心技能体验
+
 ```bash
 # 晨间规划 - 生成当日日记和任务清单
 /start-my-day
@@ -89,17 +95,20 @@ cp .env.exa.example .env.exa
 本项目基于 [MarsWang42/OrbitOS](https://github.com/MarsWang42/OrbitOS) 开发，在以下方面进行了深度增强：
 
 ### **核心增强**
+
 - ✅ **AI 代理集成**: 将 OrbitOS 的静态知识管理升级为动态智能代理
 - ✅ **技能管道系统**: 15+ 专用技能，覆盖日常知识工作全场景
 - ✅ **实时内容策展**: 自动抓取 AI 资讯、产品发布、GitHub 趋势
 - ✅ **Claude Code 原生支持**: 深度集成 Anthropic 官方代理框架
 
 ### **架构改进**
+
 - 🔧 **模块化技能设计**: 每个技能独立可配置，易于扩展
 - 🔧 **配置驱动**: 通过 CLAUDE.md 统一管理代理行为规范
 - 🔧 **本地优先增强**: 保持 OrbitOS 隐私优先原则，增加云端智能能力
 
 ### **工作流优化**
+
 - ⚡ **自动化晨间规划**: 取代手动日记，智能连接项目与任务
 - ⚡ **智能收件箱处理**: 想法 → 条目 → 项目的自动化管道
 - ⚡ **深度研究助手**: 复杂研究任务的半自动化处理
@@ -107,9 +116,12 @@ cp .env.exa.example .env.exa
 ## 🏗️ 系统架构
 
 ### **目录结构**
+
 ```
 jarvis-obsidian-claude/
-├── .agents/skills/          # 智能技能库 (15+ 技能)
+├── .agents/                 # 智能代理系统
+│   ├── skills/             # 智能技能库 (15+ 技能)
+│   └── docs/               # 代理系统文档
 ├── .claude/                 # Claude Code 配置
 ├── .obsidian/              # Obsidian 插件与主题配置
 ├── 00_收件箱/              # 智能收件箱系统
@@ -121,12 +133,17 @@ jarvis-obsidian-claude/
 ├── 50_资源/                # AI 内容策展
 ├── 90_计划/                # 执行计划管理
 ├── 99_系统/                # 模板与配置中心
+├── scripts/                # 工具脚本
 ├── CLAUDE.md               # 贾维斯行为规范
-├── AGENTS.md               # 代理系统文档
+├── CODE_OF_CONDUCT.md      # 行为准则
+├── CONTRIBUTING.md         # 贡献指南
+├── LICENSE                 # MIT许可证
+├── .env.exa.example        # Exa API配置模板
 └── README.md               # 本文件
 ```
 
 ### **技术栈**
+
 - **知识层**: Obsidian (Markdown + Wikilinks + Frontmatter + Bases + Canvas)
 - **智能层**: Claude Code Agents + 技能管道系统
 - **数据层**: 本地文件系统 + Git 版本控制
@@ -137,6 +154,7 @@ jarvis-obsidian-claude/
 本项目采用 **MIT 许可证** - 详见 [LICENSE](LICENSE) 文件。
 
 ### **许可要点**
+
 - ✅ 允许商业使用
 - ✅ 允许修改和分发
 - ✅ 允许私人使用
@@ -144,6 +162,7 @@ jarvis-obsidian-claude/
 - ❌ 不提供担保
 
 ### **使用要求**
+
 1. 保留原始版权声明
 2. 在衍生作品中注明基于本项目开发
 3. 推荐但不强制要求贡献回社区
@@ -151,6 +170,7 @@ jarvis-obsidian-claude/
 ## 🎪 示例数据
 
 ### **示例内容包含**
+
 本项目包含完整的示例数据，帮助用户快速理解系统能力：
 
 1. **示例日记** (`10_日记/2026-03-06.md`): 展示自动生成的晨间规划
@@ -160,11 +180,13 @@ jarvis-obsidian-claude/
 5. **示例资源** (`50_资源/`): 展示 AI 资讯和 GitHub 趋势摘要
 
 ### **数据特点**
+
 - 🎭 **虚构数据**: 所有示例均为虚构，不包含真实个人信息
 - 🔄 **可替换**: 用户可完全替换为自己的真实数据
 - 📖 **教育导向**: 示例设计用于展示系统功能和最佳实践
 
 ### **快速体验**
+
 ```bash
 # 查看示例晨间规划
 cat 10_日记/2026-03-06.md
@@ -175,11 +197,13 @@ ls -la 20_项目/
 # 查看 AI 资讯摘要示例
 ls -la 50_资源/Newsletters/
 ```
+
 ## 🤝 贡献指南
 
 我们欢迎各种形式的贡献！请参阅 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详情。
 
 ### **贡献方向**
+
 - 🐛 **问题报告**: 使用 GitHub Issues 报告 bug
 - 💡 **功能建议**: 提出新功能或改进建议
 - 🔧 **代码贡献**: 提交 Pull Request 修复问题或添加功能
@@ -187,6 +211,7 @@ ls -la 50_资源/Newsletters/
 - 🎨 **设计优化**: UI/UX 改进或主题设计
 
 ### **开发环境搭建**
+
 ```bash
 # 1. 克隆仓库
 git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
