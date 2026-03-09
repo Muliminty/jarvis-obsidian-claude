@@ -6,11 +6,9 @@
 ---
 type: product-digest
 date: YYYY-MM-DD
-sources: [Product Hunt, Hacker News, GitHub, Techmeme]
+sources: [Product Hunt RSS, AI专题RSS, 技术社区RSS]
 raw_sources:
-  - "[[YYYY-MM-DD_ProductHunt-Raw]]"
-  - "[[YYYY-MM-DD_HackerNews-Raw]]"
-  - "[[YYYY-MM-DD_GitHub-Raw]]"
+  - "[[YYYY-MM-DD_RSS-Raw]]"
 product_count: 15
 duplicates_merged: 5
 top_categories: [LLM工具, 开发者工具, 自动化]
@@ -23,8 +21,8 @@ created: YYYY-MM-DD HH:MM
 ```markdown
 # AI产品发布: YYYY-MM-DD
 
-> 来源: Product Hunt, Hacker News, GitHub, Techmeme
-> 原始数据: [[YYYY-MM-DD_ProductHunt-Raw]] | [[YYYY-MM-DD_HackerNews-Raw]] | [[YYYY-MM-DD_GitHub-Raw]]
+> 来源: Product Hunt RSS, AI专题RSS, 技术社区RSS
+> 原始数据: [[YYYY-MM-DD_RSS-Raw]]
 
 ## 精选推荐 (内容创作机会)
 

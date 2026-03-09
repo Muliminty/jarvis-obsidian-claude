@@ -15,39 +15,40 @@ description: 使用智能检索能力获取每日GitHub热点项目，特别是A
 - 领域分类与团队背景分析
 - 生产就绪程度评估
 
-## 搜索源
+## RSS订阅源
 
-**优先使用 Exa API 高级搜索**，如果高级搜索失败则回退到基础搜索：
+**从 OrbitOS RSS订阅源文件获取GitHub热点项目信息**：
 
-**首选工具**: `web_search_advanced_exa` (Exa 高级搜索 API) - 如果该工具可用且启用
-**备选工具**: `mcp__exa__web_search_exa` (Exa 基础搜索) - 当高级搜索不可用或失败时使用
+**订阅源文件**: `99_系统/RSS订阅源` (OPML格式)
+**主要RSS源**:
+- **GitHub Trending RSS**: `https://rsshub.app/github/trending` (通过RSSHub获取GitHub趋势)
+- **GitHub Blog RSS**: 大厂技术博客分类中的GitHub Blog
+- **技术社区RSS**: Hacker News首页、Hacker News最佳（包含GitHub项目讨论）
+- **开源相关RSS**: 编程语言官方博客、大厂技术博客中的开源项目公告
 
-执行以下搜索查询，获取当日 GitHub 热点项目：
-
-- **AI 项目趋势**: "GitHub trending AI projects 2026 stars growth today daily trending"
-- **热点仓库更新**: "GitHub trending repositories today star increase March 2026"
-- **AI Agent 相关**: "GitHub trending AI Agent infrastructure tools frameworks 2026"
-- **机器学习突破**: "GitHub trending machine learning breakthroughs latest 2026"
-- **开源工具热度**: "GitHub open source AI tools popular this week star growth"
-- **技术领域趋势**: "GitHub trending technology categories AI ML 2026"
-
-每个查询获取 8-10 个结果，优先使用实时抓取 (`livecrawl: "preferred"`)，重点关注：
-1. 项目 star 增长数据（如"+2,100 stars today"）
-2. 技术突破描述（如"19.5 FPS"、"96.15% accuracy"）
-3. 项目领域分类（如"实时视频生成"、"AI 渗透测试"）
-4. 核心团队或机构信息（如"北京大学团队"）
+**获取方法**：
+1. 首先尝试使用GitHub Trending RSS源（通过RSSHub）
+2. 如果RSSHub源不可用，读取OPML文件，提取相关分类的RSS源
+3. 对每个RSS源URL，使用WebFetch工具获取最新内容
+4. 解析RSS/Atom XML，提取条目（标题、链接、描述、发布日期）
+5. 筛选最近24小时内的条目，重点关注GitHub项目、开源工具、star增长等内容
 
 ## 工作流程
 
 1. **检查缓存**：查找 `50_资源/GitHub热点/YYYY-MM/YYYY-MM-DD-摘要.md`。若存在且日期为今天，直接返回缓存内容。
 
 2. **抓取数据**：
-   - **首选**：尝试使用 `web_search_advanced_exa` (Exa 高级搜索 API) 执行搜索。如果该工具不可用、未启用或搜索失败，则进入备选方案。
-   - **备选**：使用 `mcp__exa__web_search_exa` (Exa 基础搜索) 执行搜索。
-   - 提取每个结果的标题（项目名）、链接、描述/内容片段、发布日期（如果可用）。
-  - 从描述中提取关键信息：star增长数据（如"+2,100"）、技术指标（如"19.5 FPS"、"96.15% accuracy"）、项目领域（如"实时视频生成"、"AI Agent基础设施"）、核心团队/机构（如"北京大学团队"）、技术栈（如"Python"、"TypeScript"）。
-  - 识别项目热度关键词（trending、hot、popular、rising、star增长等）。
-   - 合并所有搜索结果，标注使用的搜索工具（高级搜索或基础搜索）。
+   - **首选方案（GitHub Trending RSS）**：
+     - 使用WebFetch获取 `https://rsshub.app/github/trending` 内容
+     - 如果RSSHub源不可用或失败，进入备选方案
+   - **备选方案（OPML RSS源）**：
+     - 读取OPML文件，提取相关分类的RSS源URL
+     - 对每个RSS源URL，使用WebFetch工具获取内容
+   - **解析条目**：从WebFetch结果中提取RSS条目信息，包括标题（项目名）、链接、描述/摘要、发布日期
+   - **提取关键信息**：从描述中提取star增长数据（如"+2,100"）、技术指标（如"19.5 FPS"、"96.15% accuracy"）、项目领域（如"实时视频生成"、"AI Agent基础设施"）、核心团队/机构（如"北京大学团队"）、技术栈（如"Python"、"TypeScript"）
+   - **识别项目热度**：查找trending、hot、popular、rising、star增长等关键词
+   - **筛选时效**：只保留最近24小时内的条目
+   - **合并结果**：合并所有RSS源的条目，标注来源RSS源名称
 
 3. **过滤**：只保留 AI 相关项目（关键词：AI、ML、LLM、GPT、Claude、automation、agent、model、人工智能、机器学习、深度学习、大语言模型）。
 
@@ -78,7 +79,7 @@ description: 使用智能检索能力获取每日GitHub热点项目，特别是A
 
 7. **保存文件**：
    - `50_资源/GitHub热点/YYYY-MM/YYYY-MM-DD-摘要.md`（精选内容）
-   - `50_资源/GitHub热点/YYYY-MM/原始数据/YYYY-MM-DD_Search-Raw.md`（原始搜索结果）
+   - `50_资源/GitHub热点/YYYY-MM/原始数据/YYYY-MM-DD_RSS-Raw.md`（原始RSS条目数据）
 
 ## 输出格式
 
@@ -104,10 +105,11 @@ description: 使用智能检索能力获取每日GitHub热点项目，特别是A
 
 ## 异常处理
 
-- 搜索查询无结果：尝试更宽泛的关键词，如 "GitHub trending repositories 2026"
-- 所有搜索都失败：使用昨天的归档，并附带提示
-- 结果为空：创建最简摘要，注明"今日无新热点项目"
-- 搜索结果过多：优先选取权威来源和高热度项目
+- **GitHub Trending RSS源失败**：回退到OPML中的其他RSS源
+- **OPML文件读取失败**：使用默认的GitHub相关RSS源URL列表（硬编码备用列表）
+- **所有RSS源都失败**：回退到Exa搜索（使用原搜索查询作为备选方案）
+- **内容为空**（无最近24小时条目）：扩大时间范围到48小时，或创建最简摘要注明"今日无新热点项目"
+- **条目过多**：优先选取高热度项目和最新内容，限制每个源最多10个条目
 
 ## 内容角度判断逻辑 (openclaw 风格)
 

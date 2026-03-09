@@ -6,9 +6,9 @@
 ---
 type: github-trending-digest
 date: YYYY-MM-DD
-sources: [智能搜索]
+sources: [GitHub Trending RSS, 技术社区RSS]
 raw_sources:
-  - "[[YYYY-MM-DD_Search-Raw]]"
+  - "[[YYYY-MM-DD_RSS-Raw]]"
 project_count: 15
 duplicates_merged: 3
 top_languages: [Python, JavaScript, TypeScript, Go, Rust]
@@ -22,8 +22,8 @@ created: YYYY-MM-DD HH:MM
 ```markdown
 # GitHub热点项目: YYYY-MM-DD
 
-> 来源: 智能搜索 (GitHub trending AI projects)
-> 原始数据: [[YYYY-MM-DD_Search-Raw]]
+> 来源: GitHub Trending RSS, 技术社区RSS
+> 原始数据: [[YYYY-MM-DD_RSS-Raw]]
 
 ## 精选推荐 (内容创作机会)
 
