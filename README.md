@@ -29,8 +29,9 @@
 
 ## 最小上手
 
-如果只想记住最关键的入口，先用这 5 个：
+如果只想记住最关键的入口，先用这 6 个：
 
+- `/init`：第一次启动系统，建立用户上下文并完成首次引导
 - `/start-my-day`：开始今天
 - `/kickoff`：把想法转成项目
 - `/ask`：快速问问题
@@ -110,6 +111,7 @@ jarvis-obsidian-claude/
 
 ### 工作流
 
+- `/init`：首次启动向导
 - `/start-my-day`：晨间规划
 - `/kickoff`：收件箱条目转项目
 - `/update-project`：按某一天日记回写项目
@@ -147,7 +149,8 @@ cd jarvis-obsidian-claude
    - Claude Code
    - Codex
    - Gemini
-5. 从 `/start-my-day` 或 `/kickoff` 开始
+5. 第一次使用建议先执行 `/init`
+6. 之后再从 `/start-my-day` 或 `/kickoff` 开始
 
 如果需要更强的搜索能力，可按需配置 `.env.exa.example`。
 
@@ -162,6 +165,7 @@ cd jarvis-obsidian-claude
 如果您打算基于它继续深度定制，建议优先修改：
 
 - `99_系统/OrbitOS-统一AI提示词.md`
+- `99_系统/用户画像与上下文.md`
 - `99_系统/文件命名规范.md`
 - `99_系统/模板/`
 - `.agents/skills/`
