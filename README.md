@@ -1,383 +1,162 @@
-# 🛡️ Jarvis - Obsidian × Claude Code 双核 AI 管家系统
+# Jarvis for Obsidian
 
-<p align="center">
-  <strong>托尼·斯塔克的专属AI管家，以 Obsidian 为记忆中枢，Claude Code 为智能引擎</strong>
-</p>
+一个面向通用用户的 Jarvis 管理系统开源版：以 Obsidian 作为本地记忆中枢，以 Claude Code 作为行动与编排入口，把收件箱、日记、项目、研究、知识和复盘串成一个可持续运转的闭环。
 
-<p align="center">
-  <a href="#-特性">特性</a> •
-  <a href="#-快速开始">快速开始</a> •
-  <a href="#-基于-orbitos">基于 OrbitOS</a> •
-  <a href="#-系统架构">系统架构</a> •
-  <a href="#-技能大全">技能大全</a> •
-  <a href="#-开源许可">开源许可</a> •
-  <a href="#-示例数据">示例数据</a> •
-</p>
+本仓库是从私有 OrbitOS 实践中脱敏整理出的通用版本。目标不是展示一个“很会记笔记”的仓库，而是提供一套可以直接开始使用、也可以继续演化的个人管理系统骨架。
 
----
+## 这套系统解决什么问题
 
-## 🎯 项目简介
+- 所有输入先有落点，不必靠脑子记住
+- 每天只关注今天最值得推进的一小步
+- 项目能和每日日记联动，不容易推进断档
+- 月度总结、项目复盘和归档有固定出口，仓库能长期保持整洁
 
-**Jarvis** 是一个深度集成 **Obsidian 知识图谱** 与 **Claude Code 智能代理** 的全栈式知识管理与任务自动化平台。它基于 [OrbitOS](https://github.com/MarsWang42/OrbitOS) 方法论开发，将个人知识管理系统升级为智能 AI 管家。
+## 核心工作流
 
-> **设计哲学**: "围绕用户运转" - 一切资源、任务、知识动态连接，保持实时响应。
+1. 想法、网页、零散事项先进入 `00_收件箱`
+2. 需要持续推进的内容用 `/kickoff` 转成 `20_项目`
+3. 每天通过 `/start-my-day` 生成当日最小执行安排
+4. 执行过程记录在 `10_日记`
+5. 通过 `/update-project` 把真实执行结果回写项目
+6. 阶段结束时用 `/project-review` 做复盘
+7. 月初用 `/monthly-review` 做月总结并归档上月日记
 
-![](99_系统/附件/Pasted%20image%2020260306144135.png)
+## 最小上手
 
-## ✨ 特性
+如果只想记住最关键的入口，先用这 5 个：
 
-### 🧠 **智能代理引擎**
+- `/start-my-day`：开始今天
+- `/kickoff`：把想法转成项目
+- `/ask`：快速问问题
+- `/update-project`：把日记回写项目
+- `/monthly-review`：做月总结并归档
 
-- **15+ 专用技能**: 内容策展、工作流自动化、深度研究、知识解析 (详见 [🎮 技能大全](#-技能大全))
-- **Claude Code 深度集成**: 原生支持 Claude 智能代理，实时响应指令
-- **多模态技能管道**: AI 资讯、产品发布、GitHub 热点自动抓取与分析
+如果需要资讯入口，再加 1 个：
 
-### 📚 **Obsidian 原生支持**
+- `/daily-digest`：统一查看 AI 新闻、AI 产品和 GitHub 热点
 
-- **全格式支持**: Markdown、Bases (.base)、Canvas (.canvas)、Wikilinks
-- **PARA 方法论**: 基于 OrbitOS 的领域-项目-资源-归档结构
-- **本地优先**: 所有数据存储在本地，隐私安全有保障
+## 目录职责
 
-### ⚡ **自动化工作流**
+### `00_收件箱`
 
-- **每日晨间规划** (`/start-my-day`): 自动生成当日日记，连接活跃项目
-- **智能收件箱** (`/kickoff`): 想法快速捕获 → 项目孵化管道
-- **深度研究** (`/research`): 双代理工作流，生成领域知识库
-- **内容策展** (`/ai-newsletters`, `/ai-products`, `/github-trending`): 每日 AI 趋势自动摘要
+- 接住所有临时输入
+- 适合放想法、网页剪藏、零散 todo、待处理事项
+- 原则是尽快分流，不长期堆放
 
-### 🔧 **开发者友好**
+### `10_日记`
 
-- **模块化设计**: 技能可独立使用或组合扩展
-- **TypeScript 技能系统**: 易于二次开发和自定义扩展
-- **完整文档**: 包含配置指南、技能开发文档、最佳实践
+- 承接每天的执行记录和反馈
+- 是项目回写、月总结和复盘的重要证据来源
 
-## 🚀 快速开始
+### `15_领域`
 
-### 🎯 开箱即用，傻瓜操作
+- 管长期责任、背景和持续关注方向
+- 为项目提供上下文，不直接承担短期执行
 
-**只需三步，立即体验 AI 管家：** Obsidian 插件与配置已内置，用 Obsidian 打开项目文件夹即可使用，无需额外安装或配置插件。
+### `20_项目`
 
-1. **安装软件**：
-   - [Obsidian](https://obsidian.md/) - 知识管理工具
-   - [Claude Code](https://claude.ai/code) - AI 智能代理
+- 管需要连续推进的事项
+- 每个项目统一使用“主文件 + 资料 + 复盘”三文件结构
 
-2. **获取项目**：
-   ```bash
-   git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
-   cd jarvis-obsidian-claude
-   ```
+### `30_研究`
 
-3. **开始使用**：
-   - **Obsidian**：用 Obsidian 打开项目文件夹；若已安装终端插件，可在 Obsidian 内打开终端并执行 `claude` 启动代理。
-   - **Claude Code**：在 Claude Code 中打开同一项目目录，执行第一个指令：`/start-my-day`。
+- 管需要系统搜集、整理、分析的主题
 
-**💡 新手提示**：如果不知道如何使用，可以随时在 Claude Code 中输入 `/help`，系统会引导你完成后续操作。
+### `40_知识库`
 
-### 📦 Obsidian 已预配置，开箱即用
+- 管原子概念和长期可复用知识
 
-本仓库的 **Obsidian 插件与配置已全部内置**，无需你自行安装或调试。`.obsidian/` 目录中已包含推荐插件列表、常用设置与工作区布局。你只需用 Obsidian **打开本项目文件夹**，即可获得与文档描述一致的界面与功能，真正做到「克隆即用、打开即用」。若你已有自己的 Obsidian 配置，也可选择忽略该目录或按需覆盖。
+### `50_资源`
 
-### 🛠️ 可选：高级配置
+- 管值得保留、以后还会反复使用的外部资料
 
-如果你需要更强大的搜索功能，可以配置 Exa API：
+### `90_计划`
 
-```bash
-# 在项目目录中执行：
-cp .env.exa.example .env.exa
-# 编辑 .env.exa 文件，填入你的 Exa API 密钥
-```
+- 管阶段性路线、方案和系统级计划
 
-### 🎮 核心技能体验
+### `99_系统`
 
-```bash
-# 晨间规划 - 生成当日日记和任务清单
-/start-my-day
+- 管模板、规则、提示词和系统标准
 
-# AI 资讯摘要 - 获取当日 AI 热点新闻
-/ai-newsletters
+## 仓库结构
 
-# GitHub 趋势 - 发现热门 AI 开源项目
-/github-trending
-
-# 项目孵化 - 将想法转为结构化项目
-/kickoff
-```
-
-> 💡 **完整技能列表**: 系统共 15 个技能，涵盖内容策展、工作流自动化、技术操作等场景。详见下方 [🎮 技能大全](#-技能大全) 部分。
-
-## 🌐 基于 OrbitOS
-
-本项目基于 [MarsWang42/OrbitOS](https://github.com/MarsWang42/OrbitOS) 开发，在以下方面进行了深度增强：
-
-### **核心增强**
-
-- ✅ **AI 代理集成**: 将 OrbitOS 的静态知识管理升级为动态智能代理
-- ✅ **技能管道系统**: 15+ 专用技能，覆盖日常知识工作全场景
-- ✅ **实时内容策展**: 自动抓取 AI 资讯、产品发布、GitHub 趋势
-- ✅ **Claude Code 原生支持**: 深度集成 Anthropic 官方代理框架
-
-### **架构改进**
-
-- 🔧 **模块化技能设计**: 每个技能独立可配置，易于扩展
-- 🔧 **配置驱动**: 通过 CLAUDE.md 统一管理代理行为规范
-- 🔧 **本地优先增强**: 保持 OrbitOS 隐私优先原则，增加云端智能能力
-
-### **工作流优化**
-
-- ⚡ **自动化晨间规划**: 取代手动日记，智能连接项目与任务
-- ⚡ **智能收件箱处理**: 想法 → 条目 → 项目的自动化管道
-- ⚡ **深度研究助手**: 复杂研究任务的半自动化处理
-
-## 🏗️ 系统架构
-
-### **目录结构**
-
-```
+```text
 jarvis-obsidian-claude/
-├── .agents/                 # 智能代理系统
-│   ├── skills/             # 智能技能库 (15+ 技能)
-│   └── docs/               # 代理系统文档
-├── .claude/                 # Claude Code 配置
-├── .obsidian/              # Obsidian 插件与主题配置
-├── 00_收件箱/              # 智能收件箱系统
-├── 10_日记/                # 自动生成日记
-├── 15_领域/                # PARA 领域管理
-├── 20_项目/                # 活跃项目管理
-├── 30_研究/                # 深度研究存档
-├── 40_知识库/              # 原子概念网络
-├── 50_资源/                # AI 内容策展
-├── 90_计划/                # 执行计划管理
-├── 99_系统/                # 模板与配置中心
-├── scripts/                # 工具脚本
-├── CLAUDE.md               # 贾维斯行为规范
-├── CODE_OF_CONDUCT.md      # 行为准则
-├── CONTRIBUTING.md         # 贡献指南
-├── LICENSE                 # MIT许可证
-├── .env.exa.example        # Exa API配置模板
-└── README.md               # 本文件
+├── .agents/                 # 技能定义
+├── .claude/                 # Claude 侧兼容技能目录
+├── .obsidian/               # Obsidian 配置
+├── 00_收件箱/
+├── 10_日记/
+├── 15_领域/
+├── 20_项目/
+├── 30_研究/
+├── 40_知识库/
+├── 50_资源/
+├── 90_计划/
+├── 99_系统/
+├── AGENTS.md
+├── CLAUDE.md
+├── GEMINI.md
+└── README.md
 ```
 
-### **技术栈**
+## 关键技能
 
-- **知识层**: Obsidian (Markdown + Wikilinks + Frontmatter + Bases + Canvas)
-- **智能层**: Claude Code Agents + 技能管道系统
-- **数据层**: 本地文件系统 + Git 版本控制
-- **集成层**: Exa API + MCP 服务器 + Web 搜索能力
+### 工作流
 
-## 🎮 技能大全
+- `/start-my-day`：晨间规划
+- `/kickoff`：收件箱条目转项目
+- `/update-project`：按某一天日记回写项目
+- `/project-review`：阶段或项目复盘
+- `/monthly-review`：月度总结与日记归档
+- `/research`：深度研究并产出研究笔记
+- `/ask`：快速回答，不强制沉淀
+- `/archive`：清理已完成项目
 
-系统集成 **15 个智能技能**，分为 **4 个核心类别**：
+### 内容策展
 
-### 🎯 内容策展技能
-- **`/ai-newsletters`**: 每日 AI 热点新闻摘要 (TLDR AI, The Rundown AI)
-- **`/ai-products`**: AI 产品发布跟踪 (Product Hunt, HN, GitHub, Reddit)
-- **`/github-trending`**: GitHub 趋势项目发现，特别关注 AI 开源仓库
+- `/ai-newsletters`：AI 新闻摘要
+- `/ai-products`：AI 产品动态
+- `/github-trending`：GitHub 热点项目
+- `/daily-digest`：统一资讯入口
 
-### 🔄 工作流技能
-- **`/start-my-day`**: 晨间规划核心 - 生成当日日记，连接活跃项目
-- **`/kickoff`**: 想法 → 项目孵化管道 - 处理收件箱，创建结构化项目
-- **`/research`**: 深度研究工作流 - 双代理协同，生成领域知识库
-- **`/ask`**: 快速问答 - 即时响应，无需繁琐笔记记录
-- **`/parse-knowledge`**: 非结构化文本 → 知识库结构化整合
-- **`/archive`**: 项目归档 - 清理已完成项目，保持系统整洁
-- **`/brainstorm`**: 交互式头脑风暴 - 创意发散与收敛，可导出项目
-- **`/clipboard-organize`**: 网络剪藏整理 - 自动归类文章到规范结构
+### 技术能力
 
-### 🛠️ 技术功能技能
-- **`/simplify`**: 代码审查与优化 - 检查可复用性、质量、效率
-- **`/obsidian-markdown`**: Obsidian Markdown 编辑 - 支持 wikilinks、嵌入、标注
-- **`/obsidian-bases`**: Obsidian Bases 创建 - 数据库视图、过滤器、公式
-- **`/json-canvas`**: JSON Canvas 编辑 - 思维导图、流程图、系统架构图
+- `obsidian-markdown`
+- `obsidian-bases`
+- `json-canvas`
 
-### 🎪 核心组合示例
-```bash
-# 晨间工作流
-/start-my-day          # 生成当日规划
-/ai-newsletters       # 获取 AI 资讯
-/github-trending      # 查看技术趋势
+## 开始使用
 
-# 内容处理管道
-/kickoff              # 想法转项目
-/research             # 深度研究
-/parse-knowledge      # 知识库整合
-
-# 技术创作
-/obsidian-markdown    # 笔记编写
-/obsidian-bases       # 数据视图
-/json-canvas          # 视觉化思考
-```
-
-所有技能均通过 Claude Code 直接调用：`/技能名称`，支持参数化使用。
-
-## 🔌 插件集成
-
-### **Obsidian Web Clipper × clipboard-organize 智能联动**
-
-Jarvis 系统深度集成 **Obsidian Web Clipper** 浏览器插件，构建完整的网页内容捕获→智能分类→知识整合工作流。
-
-![](99_系统/附件/Pasted%20image%2020260306155739.png)
-
-![](99_系统/附件/Pasted%20image%2020260306155757.png)
-![](99_系统/附件/Pasted%20image%2020260306155850.png)
-
-#### **🔗 插件安装**
-- **Chrome 商店**: [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian-web-clipper/cnjifjpddelmedmihgijeibhnjfabmlf?utm_source=ext_sidebar)
-- **Firefox 插件**: 通过 Obsidian 官方渠道获取
-- **配置路径**: 设置为保存到 `00_收件箱/网络剪藏/` 目录
-
-#### **🔄 联动工作流**
-```
-浏览器浏览 → Web Clipper 捕获 → 自动保存 → clipboard-organize 智能分类 → 知识库整合
-```
-
-1. **捕获阶段** (Web Clipper):
-   - 一键保存网页内容为 Markdown
-   - 自动提取标题、正文、元数据
-   - 保存到 `00_收件箱/网络剪藏/[文章标题].md`
-
-2. **整理阶段** (clipboard-organize):
-   ```bash
-   # 智能分类单篇文章
-   /clipboard-organize 00_收件箱/网络剪藏/MyArticle.md
-
-   # 批量整理所有剪藏
-   /clipboard-organize
-   ```
-
-3. **分类规则**:
-   - **深度研究** → `30_研究/[主题]/`
-   - **教程指南** → `30_研究/教程/`
-   - **概念知识** → `40_知识库/[分类]/`
-   - **参考文章** → `50_资源/文章/[主题]/`
-   - **新闻动态** → `50_资源/新闻/[领域]/`
-   - **工具资源** → `50_资源/工具/[类型]/`
-
-#### **🎯 智能特性**
-- **自动主题识别**: 基于内容分析匹配最相关领域
-- **结构化元数据**: 自动生成 frontmatter 包含来源、日期、标签
-- **知识图谱连接**: 自动创建 wikilinks 连接到相关项目和领域
-- **重复检测**: 识别相似内容，避免信息冗余
-
-#### **📊 使用示例**
-```bash
-# 1. 使用 Web Clipper 保存技术文章到收件箱
-# 2. 执行智能分类
-/clipboard-organize 00_收件箱/网络剪藏/AI-Transformer架构详解.md
-
-# 输出示例:
-**标题**: AI Transformer架构详解
-**归类**: 30_研究/ai/transformer/
-**类型**: 网络剪藏
-**标签**: #transformer #ai #深度学习 #注意力机制
-**一句话总结**: 深入解析Transformer架构的核心原理和应用场景
-**核心观点**:
-1. 注意力机制是Transformer的核心创新
-2. 多头注意力提升模型表达能力
-3. 位置编码解决序列顺序问题
-```
-
-#### **⚡ 最佳实践**
-- **每日整理**: 将 `/clipboard-organize` 加入晨间工作流
-- **批量处理**: 定期清理 `00_收件箱/网络剪藏/` 目录
-- **质量过滤**: 在分类时标记低质量内容，保持知识库纯净
-- **反向链接**: 分类后自动在相关领域笔记中添加引用
-
-> **提示**: Web Clipper 保存的原始内容在 `00_收件箱/网络剪藏/` 中，经过 `/clipboard-organize` 处理后移动到对应分类目录，保持收件箱整洁。
-
-## 📄 开源许可
-
-本项目采用 **MIT 许可证**
-
-### **许可要点**
-
-- ✅ 允许商业使用
-- ✅ 允许修改和分发
-- ✅ 允许私人使用
-- ✅ 保留版权声明
-- ❌ 不提供担保
-
-### **使用要求**
-
-无
-
-## 🎪 示例数据
-
-### **示例内容包含**
-
-本项目包含完整的示例数据，帮助用户快速理解系统能力：
-
-1. **示例日记** (`10_日记/2026-03-06.md`): 展示自动生成的晨间规划
-2. **示例项目** (`20_项目/示例AI助手项目.md`): 展示项目模板和进度跟踪
-3. **示例领域** (`15_领域/个人成长/`): 展示 PARA 领域管理结构
-4. **示例研究** (`30_研究/AI代理架构研究.md`): 展示深度研究笔记格式
-5. **示例资源** (`50_资源/`): 展示 AI 资讯和 GitHub 趋势摘要
-
-### **数据特点**
-
-- 🎭 **虚构数据**: 所有示例均为虚构，不包含真实个人信息
-- 🔄 **可替换**: 用户可完全替换为自己的真实数据
-- 📖 **教育导向**: 示例设计用于展示系统功能和最佳实践
-
-### **快速体验**
+1. 安装 [Obsidian](https://obsidian.md/) 和 [Claude Code](https://claude.ai/code)
+2. 克隆仓库
 
 ```bash
-# 查看示例晨间规划
-cat 10_日记/2026-03-06.md
-
-# 浏览示例项目结构
-ls -la 20_项目/
-
-# 查看 AI 资讯摘要示例
-ls -la 50_资源/Newsletters/
-```
-
-## 🤝 贡献指南
-
-我们欢迎各种形式的贡献！请参阅 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详情。
-
-### **贡献方向**
-
-- 🐛 **问题报告**: 使用 GitHub Issues 报告 bug
-- 💡 **功能建议**: 提出新功能或改进建议
-- 🔧 **代码贡献**: 提交 Pull Request 修复问题或添加功能
-- 📚 **文档改进**: 完善文档或翻译
-- 🎨 **设计优化**: UI/UX 改进或主题设计
-
-### **开发环境搭建**
-
-```bash
-# 1. 克隆仓库
 git clone https://github.com/Muliminty/jarvis-obsidian-claude.git
-
-# 2. 安装开发依赖
-# (根据具体技术栈添加)
-
-# 3. 运行测试
-# (添加测试指令)
+cd jarvis-obsidian-claude
 ```
 
-## 📞 支持与反馈
+3. 用 Obsidian 打开当前目录
+4. 在 Claude Code 中打开同一目录
+5. 从 `/start-my-day` 或 `/kickoff` 开始
 
-- **GitHub Issues**: [问题反馈](https://github.com/Muliminty/jarvis-obsidian-claude/issues)
-- **讨论区**: [GitHub Discussions](https://github.com/Muliminty/jarvis-obsidian-claude/discussions)
-- **邮件**: (可选添加联系方式)
+如果需要更强的搜索能力，可按需配置 `.env.exa.example`。
 
-## 📊 项目状态
+## 开源版定位
 
-![GitHub License](https://img.shields.io/github/license/Muliminty/jarvis-obsidian-claude)
-![GitHub Stars](https://img.shields.io/github/stars/Muliminty/jarvis-obsidian-claude)
-![GitHub Issues](https://img.shields.io/github/issues/Muliminty/jarvis-obsidian-claude)
+这个仓库优先提供“通用骨架”而不是某个具体用户的私人上下文，因此做了几类收敛：
 
-**当前版本**: v1.0.0 (初始发布)
-**维护状态**: 积极维护
-**推荐用户**: 知识工作者、研究人员、开发者、AI 爱好者
+- 保留稳定结构，不公开私人数据
+- 保留技能入口，不绑定个人节奏细节
+- 保留命名与模板规则，不暴露私有知识库路径
 
----
+如果您打算基于它继续深度定制，建议优先修改：
 
-<p align="center">
-  <em>"随时为您服务，先生。" — 贾维斯</em>
-</p>
+- `99_系统/OrbitOS-统一AI提示词.md`
+- `99_系统/文件命名规范.md`
+- `99_系统/模板/`
+- `.agents/skills/`
 
-<p align="center">
-  由 <a href="https://github.com/Muliminty">Muliminty</a> 基于 <a href="https://github.com/MarsWang42/OrbitOS">OrbitOS</a> 开发
-</p>
+## 许可证
+
+本项目使用 [MIT License](LICENSE)。
