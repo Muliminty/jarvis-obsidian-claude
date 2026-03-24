@@ -1,6 +1,6 @@
 # Jarvis for Obsidian
 
-![](99_系统/附件/Pasted%20image%2020260324160743.png)
+![](99_系统/附件/Pasted%20image%2020260324160949.png)
 
 一个面向通用用户的 Jarvis 管理系统开源版：以 Obsidian 作为本地记忆中枢，以 Claude Code / Codex / Gemini 作为行动与编排入口，把收件箱、日记、项目、研究、知识和复盘串成一个可持续运转的闭环。
 

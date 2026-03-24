@@ -265,7 +265,7 @@
               },
               "pinned": true,
               "icon": "terminal",
-              "title": "终端：⠂ Claude Code 自我介绍"
+              "title": "终端：✳ Claude Code 自我介绍"
             }
           }
         ],
@@ -294,14 +294,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "987db3a8468729d0",
+  "active": "edeff5c96e987db1",
   "lastOpenFiles": [
+    "README.md",
+    "99_系统/附件/Pasted image 20260324160949.png",
     "99_系统/附件/Pasted image 20260324160743.png",
     "10_日记/2026-03-06.md",
     "99_系统/用户画像与上下文.md",
     "00_收件箱/看板.md",
     "00_收件箱/!MOC-收件箱管理.md",
-    "README.md",
     "GEMINI.md",
     "CONTRIBUTING.md",
     "CODE_OF_CONDUCT.md",
@@ -340,8 +341,6 @@
     "50_资源/产品发布/2026-03/原始数据/2026-03-06_Search-Raw.md",
     "50_资源/Newsletters/2026-03/原始数据/2026-03-06_Search-Raw.md",
     "90_计划/!MOC-计划.md",
-    "50_资源/Screenshot.png",
-    "15_领域/家庭生活/设备说明书/软件/sunshine串流/附件/Pasted image 20241203194907.png",
     "未命名.canvas",
     "未命名 1.canvas",
     "未命名 2.canvas"
