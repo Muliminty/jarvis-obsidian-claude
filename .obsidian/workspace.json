@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d9f164a19f9e3246",
+        "id": "7e3a8a95234c0179",
         "type": "tabs",
         "children": [
           {
-            "id": "987db3a8468729d0",
+            "id": "2cfd914417a0f459",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "新标签页"
             }
           }
         ]
@@ -273,7 +269,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 593.5
+    "width": 593.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -294,13 +291,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "edeff5c96e987db1",
+  "active": "2cfd914417a0f459",
   "lastOpenFiles": [
+    "99_系统/用户画像与上下文.md",
     "README.md",
     "99_系统/附件/Pasted image 20260324160949.png",
     "99_系统/附件/Pasted image 20260324160743.png",
     "10_日记/2026-03-06.md",
-    "99_系统/用户画像与上下文.md",
     "00_收件箱/看板.md",
     "00_收件箱/!MOC-收件箱管理.md",
     "GEMINI.md",
